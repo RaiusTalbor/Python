@@ -4,7 +4,7 @@
 var = 3
 int() / float() #auch typecasting
 type()			#gibt Typ zurück
-var += 1		#erhöht var um 1
+var2 += 1		#erhöht var um 1
 
 # Zeichenketten ------------------------------------------------------------
 str()
@@ -85,7 +85,7 @@ def fkt (var1, zweiteübergebenevar):
 	global var						#in Fkt. auf globale var zugreifen
 	[Funktionsblock]
 	return rückgabewert				#wenn Wiedergabe erfolgen soll
-var=fkt (50,20,var1, ...)		#var nur nötig, wenn return
+var=fkt (50,20,var1, ...)			#var nur nötig, wenn return
 
 # Bibliotheken/Module ------------------------------------------------------
 from Bibliothek import *
@@ -126,11 +126,11 @@ f.flush()				#gespeichert, aber nicht geschlossen (txt)
 pickle.dump()			#für Binärdateien: speichern
 pickle.load()			#für Binärdateien: laden
 
-F=open('Ordner/Renndaten.dat', mode='wb') 	#speichern
+f=open('Ordner/Renndaten.dat', mode='wb') 	#speichern
 pickle.dump(Liste, f)
 f.close()
 
-F=open(pfad, 'rb')					#lesen
+f=open(pfad, 'rb')					#lesen
 var=pickle.load(f)
 f.close()
 
@@ -159,15 +159,15 @@ var=Label(master=fenster, text='')
 #rechteckige Fläche
 
 #Button
-var=Button(master=[], text = '', command=fkt)
+var=Button(master=fenster, text = '', command=fkt)
 #mit () dahinter wird fkt sofort ausgeführt
 
 #Frame
-var=Frame(master=[])
-#Container (für Layout und Anordnung praktisch)
+var=Frame(master=fenster)
+#Container (für Layout und Anordnung praktisch) (statt Fenster frame als master)
 
 #Entry
-var=Entry(master=[])
+var=Entry(master=fenster)
 #einzeilige Eingabe; Text für mehrzeilig
 var.get()							#Rückgabe (Auch Indexe wie Delete möglich)
 var.delete(index[, index2])		#löscht Zeichen, oder von 1 bis 2 
@@ -175,15 +175,15 @@ var.insert(index, text) 		#fügt an index text ein
 
 #Radiobuttons
 varKontroll=StringVar()
-varButton1=Radiobutton(master=[], text='', value=varKontroll, variable=Wertvariable)
-varButton2=Radiobutton(master=[], text='', value=varKontroll, variable=Wertvariable2)
+varButton1=Radiobutton(master=fenster, text='', value=varKontroll, variable=Wertvariable)
+varButton2=Radiobutton(master=fenster, text='', value=varKontroll, variable=Wertvariable2)
 varAusgabe=varKontroll.get()
 #1 aus n Auswahl; Kontrollvariable für alle nötig, nimmt Wert für ausgewählten an (deswegen get zum Wert bekommen!)
 #Checkbutton
 #m aus n Auswahl
 
 #Bilder
-var=PhotoImage(master=[], file=pfad)
+var=PhotoImage(master=fenster, file=pfad)
 #Bild, nur png!
 photoimage.get(x,y)		#Gibt Farbwert als Tupel des Pixels zurück
 photoimage.height()		#gibt Höhe Foto zurück /width
@@ -217,8 +217,7 @@ padx/pady	#leerer Raum drumherum
 side		#LEFT,RIGHT,TOP,BUTTOM ; an dessen Rand gesetzt
 fill		#passt sich an Master an (Widget füllt mit leeren Raum): X,Y,BOTH,NONE
 
-#Widgetattribute
-Für meisten Widgets:
+#Widgetattribute (für die meisten)
 text
 image			#Bild auf Widget zu sehen	
 height
@@ -242,32 +241,37 @@ varerstes.add_separator() 	#Trennstrich
 
 # Threads -------------------------------------------------------------------------
 from _thread import start_new_thread
-start_new_thread(fkt, (…))	#erst Fkt., dann übergebene Var, für leer: ()
+start_new_thread(fkt, (...))	#erst Fkt., dann übergebene Var, für leer: ()
 #neuer Ablauf des Programms --> mehrere Abläufe parallel (Widgets #können sich möglicherweise nicht aktualisieren, dann mit neuen Thread probieren)
 
 # Assert ---------------------------------------------------------------------------
-Assert [Bedingung]		#bricht Programm ab, wenn falsch
+assert [Bedingung]		#bricht Programm ab, wenn falsch
 
 # Objektorientierung ---------------------------------------------------------------
-Class klassenname:
+class klassenname:
 	#[Docstring (Erklärung als str)]
-	def __init__(self, …):
+	def __init__(self, weiteresAttribut):
 		#Anweisung zur Initialisierung, Attribute
-        self.inhalt=0
-	def __Methode1(self, …):
+		self.inhalt=0
+	def __Methode1(self, weiteresAttribut):
 		#Anweisungen; definiert diese Methode
 		self.inhalt+=500
 
-A=klassenname()
+a=klassenname()
 a.Methode1()
 
 # Turtle ---------------------------------------------------------------------------
 import turtle
-var.pendown()				var.penup()	
-var.pencolor()				var.pensize()
-var.forward([px])/fd		var.backward([px])/bk/back
-var.right()/rt				var.left()/lt	
-var.goto()					var.write()
+var.pendown()				
+var.penup()	
+var.pencolor()				
+var.pensize()
+var.forward([px])/fd		
+var.backward([px])/bk/back
+var.right()/rt				
+var.left()/lt	
+var.goto()					
+var.write()
 var.circle([radius])
 turtle.tracer(0,0)			#zeichnet sofort
 turtle.update()
