@@ -65,6 +65,7 @@ liste.count(L)				#zählt, wie oft L
 liste.pop(L)				#gibt L wieder und löscht aus Liste
 liste.sort()				#wird aufsteigend sortiert
 liste.reverse()				#Reihenfolge wird umgekehrt
+liste.clear()				#Liste wird komplett gelöscht
 
 # Dictionary ----------------------------------------------------------------
 var = {'schlüssel':'Wert', ...}	#wenn Schlüssel aufgerufen, wert wird wiedergegeben
@@ -184,8 +185,11 @@ except:
 from tkinter import *
 fenster=Tk()
 fenster.title('')
-fenster.geometry("1000x800")
+fenster.geometry("800x600")
 fenster.mainloop()
+
+#!!! Zweites Fenster in einem Projekt (ob in selben oder anderen Datei):
+fenster2=Toplevel()
 
 # Label ----------------------------------------------------------------------
 var=Label(master=fenster, text='')

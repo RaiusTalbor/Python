@@ -20,8 +20,6 @@ for i in range(1, anzahl + 1):
     tk.Radiobutton(root, text=f"Auswahl: {i}", variable=var, value=i).pack()
 var.set(1)
 
-var.set(1)
-
 # Button, um die Auswahl anzuzeigen
 btn = tk.Button(root, text="Auswahl anzeigen", command=get_selection)
 btn.pack()
