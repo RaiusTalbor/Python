@@ -258,6 +258,7 @@ Widget.cget(text)			#gibt Zustand des W wieder, Bsp: text
 Widget.config(text='b')		#ändert Wert, Bsp: text='b'
 Widget.bell()				#erzeugt Glockenschlag
 Widget.after(zeit, fkt)		#nach Millisekunden wird Fkt. ausgeführt
+Widget.update_idletasks()	#erzwingt sofortiges Update
 
 #Widgetattribute (für die meisten)
 text
