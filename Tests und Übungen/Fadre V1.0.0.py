@@ -8,13 +8,7 @@ verbrauch = float(input("Verbrauch pro 100 km: "))
 verbrauchkonst = 2*spritpreis * verbrauch / 100
 #+Rückweg
 
-coswigkonst = 4*verbrauchkonst
-zitzschewigkonst = 3*verbrauchkonst
-kaditzkonst = 8.5*verbrauchkonst
-trachaukonst = 4.2*verbrauchkonst
-uferkonst = 18*verbrauchkonst
-freibergerkonst = 20.1*verbrauchkonst
-
+#Ticketpreise
 tag1 = 7.20
 tag2 = 9.90
 vtag = 16.10
@@ -24,7 +18,9 @@ woche2 = 31.10
 uwoche = 46.60     #umliegende zonen
 vwoche = 61.40
 
-dticket = 49
+dticket = 58
+
+jobticket = 25.55
 
 tage = float(input("Anzahl der Tage: "))
 wochen = float(round(tage/7))
@@ -34,15 +30,23 @@ monate = float(round(wochen/4))
 if monate == 0:
     monate=1
 
+#Spritgeld zur Station
+coswigkonst = 4*verbrauchkonst*tage*2
+zitzschewigkonst = 3*verbrauchkonst*tage*2
+kaditzkonst = 8.5*verbrauchkonst*tage*2
+trachaukonst = 4.2*verbrauchkonst*tage*2
+uferkonst = 18*verbrauchkonst*tage*2
+freibergerkonst = 20.1*verbrauchkonst*tage*2
+
 print("")
 print("")
 
 print("Fahrt ohne Öffis: ", 15.2*verbrauchkonst*tage)
 
-#print("")
-#print("")
-
 if tage*tag1 < woche1:
+    print("")
+    print("")
+
     print("Tagesticket Dresden Einstieg Trachau: ", trachaukonst+tage*tag1)
     print("Tagesticket Dresden Einstieg Kaditz: ", kaditzkonst+tage*tag1)
     print("Tagesticket Dresden Einstieg Uferstr.: ", uferkonst+tage*tag1)
@@ -69,3 +73,7 @@ print("")
 print("")
 
 print("Deutschlandticket Dresden Einstieg Coswig: ", coswigkonst+monate*dticket)
+print("Job-D-Ticket Dresden Einstieg Coswig: ", coswigkonst+monate*jobticket)
+
+print("")
+print("")

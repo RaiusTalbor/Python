@@ -10,6 +10,7 @@ anzahl = 5  # Zum Beispiel 5
 # Tkinter Fenster erstellen
 root = tk.Tk()
 root.title("Radiobutton Beispiel")
+root.geometry("500x500")
 
 # Variable, um die Auswahl zu speichern
 var = tk.IntVar()
@@ -17,6 +18,7 @@ var = tk.IntVar()
 # Dynamisch Radiobuttons erstellen
 for i in range(1, anzahl + 1):
     tk.Radiobutton(root, text=f"Auswahl: {i}", variable=var, value=i).pack()
+var.set(1)
 
 var.set(1)
 
