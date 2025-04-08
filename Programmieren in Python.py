@@ -141,6 +141,9 @@ import time
 var=time.localtime()
 var.tm_year()			#auch month, hour, …
 
+sekunden=2
+time.sleep(sekunden)	#wartet 2 Sekunden
+
 # Speichern/Lesen ------------------------------------------------------------
 import pickle
 f = open(datei, mode='r' [, encoding='utf-8'])
@@ -209,11 +212,22 @@ varButton1=Radiobutton(master=fenster, text='', value=varKontroll, variable=Wert
 varButton2=Radiobutton(master=fenster, text='', value=varKontroll, variable=Wertvariable2)
 varAusgabe=varKontroll.get() 
 #Kontrollvariable für alle nötig, nimmt Wert für ausgewählten an (deswegen get zum Wert bekommen!)
-varButton1.select()		#Vorauswahl
+varButton1.select()				#Vorauswahl
+varKontroll.set(Wertvariable2) 	#Vorauswahl --> besonders bei "automatischen"
 #1 aus n Auswahl
+
+#Trick: Dynamische Radiobuttons
+for i in range(1, 5):
+    Radiobutton(fenster, text=f"Auswahl: {i}", variable=var, value=i).pack()
 
 # Checkbutton ----------------------------------------------------------------
 #m aus n Auswahl
+
+# Schieberegler --------------------------------------------------------------
+scale = Scale(master = fenster, from_= 1, to = 10, orient=HORIZONTAL)
+scale.pack()
+#vertical geht auch
+#.get wieder für Wert
 
 # Bilder ---------------------------------------------------------------------
 photoimage=PhotoImage(master=fenster, file=pfad)		#Bild, nur png!
