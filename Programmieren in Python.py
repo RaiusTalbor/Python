@@ -208,12 +208,12 @@ var.insert(index, text) 			#fügt an index text ein
 
 # Radiobuttons ---------------------------------------------------------------
 varKontroll=StringVar()
-varButton1=Radiobutton(master=fenster, text='', value=varKontroll, variable=Wertvariable)
-varButton2=Radiobutton(master=fenster, text='', value=varKontroll, variable=Wertvariable2)
+varButton1=Radiobutton(master=fenster, text='', value=Wertvariable, variable=varKontroll)
+varButton2=Radiobutton(master=fenster, text='', value=Wertvariable2, variable=varKontroll)
 varAusgabe=varKontroll.get() 
 #Kontrollvariable für alle nötig, nimmt Wert für ausgewählten an (deswegen get zum Wert bekommen!)
 varButton1.select()				#Vorauswahl
-varKontroll.set(Wertvariable2) 	#Vorauswahl --> besonders bei "automatischen"
+varKontroll.set(Wertvariable2) 	#Vorauswahl --> besonders bei dynamischen
 #1 aus n Auswahl
 
 #Trick: Dynamische Radiobuttons
