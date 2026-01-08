@@ -301,15 +301,22 @@ assert [Bedingung]		#bricht Programm ab, wenn falsch
 # Objektorientierung ---------------------------------------------------------
 class klassenname:
 	#[Docstring (Erklärung als str)]
+
+	#Klassenattribute - Attribute ALLER Objekte der Klasse (nicht eines einzelnen Objekts) - alle können darauf zugreifen
+	abc = 0
+
 	def __init__(self, weiteresAttribut):
-		#Anweisung zur Initialisierung, Attribute
-		self.inhalt=0
+		#Anweisung zur Initialisierung, Attribute - Konstruktor
+		self.inhalt=0 #hier wird Variable erstellt und existiert solange wie Objekt selbst - anders als in anderen Methoden
 	def Methode1(self, weiteresAttribut):
 		#Anweisungen; definiert diese Methode
 		self.inhalt+=500
 
 a=klassenname()
 a.Methode1()
+
+#theoretisch lassen sich auch außerhalb Variablen festlegen, wird aber nicht empfohlen
+a.irgendwas = 0
 
 # Turtle ---------------------------------------------------------------------
 import turtle
