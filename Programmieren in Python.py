@@ -253,12 +253,15 @@ varPIL.size()						#gibt Größe in w und h zurück
 
 # Widgetmethoden -------------------------------------------------------------
 Widget.pack()		 		#erzeugt Widget
+Widget.pack_forget()		#versteckt das Widget
 Widget.destroy()			#löscht W
 Widget.cget(text)			#gibt Zustand des W wieder, Bsp: text
 Widget.config(text='b')		#ändert Wert, Bsp: text='b'
 Widget.bell()				#erzeugt Glockenschlag
 Widget.after(zeit, fkt)		#nach Millisekunden wird Fkt. ausgeführt
 Widget.update_idletasks()	#erzwingt sofortiges Update
+
+#Trick: mit Widget.kategorie = "Wert" kann man Widgets filtern
 
 #Widgetattribute (für die meisten)
 text
