@@ -188,6 +188,10 @@ fenster.title('')
 fenster.geometry("800x600")
 fenster.mainloop()
 
+#kompletten Inhalt des Frames / Fensters löschen
+for widget in var.winfo_children():
+    widget.destroy()
+
 #!!! Zweites Fenster in einem Projekt (ob in selben oder anderen Datei):
 fenster2=Toplevel()
 
@@ -202,6 +206,10 @@ var=Button(master=fenster, text = '', command=fkt)
 # Frame ----------------------------------------------------------------------
 var=Frame(master=fenster)
 #Container (für Layout und Anordnung praktisch) (statt Fenster frame als master)
+
+#kompletten Inhalt des Frames / Fensters löschen
+for widget in var.winfo_children():
+    widget.destroy()
 
 # Entry ----------------------------------------------------------------------
 var=Entry(master=fenster)
